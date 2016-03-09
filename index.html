@@ -3,7 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>jQuery Template</title>
+  <title>Banner-Generator</title>
+  <style>
+      
+     
+      
+  </style>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <script>
    $(function(){ 
@@ -13,15 +18,26 @@
    
     
   </script>
+  
 </head>
 <body>
-<div id=#banner> 
 
-Name:<input id="name"> </input>
+<div style="border:solid; border-color:green; display:inline-block">
+Name:<input name="name" id="name" value=""> </input> 
+<br>
+
+<br>Favorite Food:</br>
+<input type="radio" name="food" id="fast-food">Fast Food (Pizza, Fries, Burgers, Milk shakes, chips, etc) </br>
+<input type="radio" name="food" id="fruits"> Fruits & Vegies (Water melon, apples, brocoli, salad, etc)  </br>
+<input type="radio" name="food" id="meats"> Meats (Ham, Turkey Chicken, Lamb, etc) </br>
 
 
+
+Favorite Color:
+<input type="text"  name="colors" id="color"> </input>
+<br>
+<button type="button">Create Banner</button>
 
 </div>
-  
 </body>
 </html>
