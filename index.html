@@ -19,10 +19,19 @@
 
                 $('#info').fadeOut(2000, function() {
                     
-                var food = $("input:radio[name='food']:checked").val();
+                var foodURL = $("input:radio[name='food']:checked").val();
                 
+                if(foodURL == "fastfoodPic.jpg"){
+                    var foodName = "Fast Food";
+                } 
+                else if(foodURL == "vegPic.jpg"){
+                    var foodName = "Fruits & Veggies";
+                } 
+                else {
+                    var foodName = "Meats";
+                }
                    
-                   $('img').attr("src",food)
+                   $('img').attr("src",foodURL)
                    
                    $('#banner').fadeIn(1000);
                     var name = $('#name').val();
@@ -30,7 +39,7 @@
               
                var color = $('#color').val();
                $("h1").css("color",color);
-                  var story = ("My name is " + name + ", and my favorite food is " + food );
+                  var story = ("My name is " + name + ", and my favorite food is " + foodName );
                $('h1').html(story);
                
                 });
@@ -57,11 +66,11 @@
         <br>
 
         <br>Favorite Food:</br>
-        <input type="radio" name="food" value="fastfoodPic.jpg" id="fast">Fast Food (Pizza, Fries, Cookies, Milk Shakes, Chips, etc) </br>
+        <input type="radio" name="food" value="fastfoodPic.jpg" id="FastFood">Fast Food (Pizza, Fries, Cookies, Milk Shakes, Chips, etc) </br>
         <br></br>
-        <input type="radio" name="food" value="vegPic.jpg"> Fruits & Vegies (Water Melon, Apples, Brocoli, Salads, Carrots, etc) </br>
+        <input type="radio" name="food" value="vegPic.jpg" id = "Fruits"> Fruits & Vegies (Water Melon, Apples, Brocoli, Salads, Carrots, etc) </br>
         <br></br>
-        <input type="radio" name="food" value="meats"> Meats (Ham, Turkey, Chicken, Lamb, Beef, etc) </br>
+        <input type="radio" name="food" value="meatsPic.jpg" id="Meat"> Meats (Ham, Turkey, Chicken, Lamb, Beef, etc) </br>
 
         <br>Favorite Color:</br>
 
@@ -73,7 +82,7 @@
     
     
     <div id="banner" >  
-    <h1 style="text-align:center"> </h1> 
+    <h1 > </h1> 
     
     <img> </img>
   
