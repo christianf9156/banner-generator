@@ -8,6 +8,7 @@
     <style>
         #banner {
             display: none;
+           
         }
     </style>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -17,13 +18,17 @@
 
                 $('#info').fadeOut(2000, function() {
                     
-                    var food = $("input:radio[name='food']:checked").val();
+                var food = $("input:radio[name='food']:checked").val();
+                
                    
-                    $('#banner').fadeIn(1000).css('background-image', "url(fastfoodPic.jpg)");
-                    
-
+                   $('#banner').attr("src",food).fadeIn(1000);
+                  
                 });
-
+               var name = $('#name').val();
+                
+               $('h1').html(name);
+               var color = $('#color').val();
+               $("h1").css("color",color);
             });
 
 
@@ -37,15 +42,15 @@
 
 <body>
 
-    <div style="border:solid; border-color:green; display:inline-block" id="info">
+    <div style="border:solid; border-color:green; display:inline-block;" id="info">
         Name:
-        <input name="name" id="name" value=""> </input>
+        <input  id="name" > </input>
         <br>
 
         <br>Favorite Food:</br>
-        <input type="radio" name="food" value="fast-food">Fast Food (Pizza, Fries, Cookies, Milk Shakes, Chips, etc) </br>
+        <input type="radio" name="food" value="fastfoodPic.jpg" id="fast">Fast Food (Pizza, Fries, Cookies, Milk Shakes, Chips, etc) </br>
         <br></br>
-        <input type="radio" name="food" value="fruits"> Fruits & Vegies (Water Melon, Apples, Brocoli, Salads, Carrots, etc) </br>
+        <input type="radio" name="food" value="vegPic.jpg"> Fruits & Vegies (Water Melon, Apples, Brocoli, Salads, Carrots, etc) </br>
         <br></br>
         <input type="radio" name="food" value="meats"> Meats (Ham, Turkey, Chicken, Lamb, Beef, etc) </br>
 
@@ -55,8 +60,16 @@
         <br> </br>
         <button type="button">Create Banner</button>
     </div>
-    <h1> </h1>
-    <div id="banner"> </div>
+    
+    
+    
+    <div id="banner" >  
+    
+    
+  <h1> </h1> 
+    
+    </div>
+   
 
 
 </body>
