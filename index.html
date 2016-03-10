@@ -1,43 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Banner-Generator</title>
-  <style>
-      
-     
-      
-  </style>
-  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-  <script>
-   $(function(){ 
-       
-       
-   });
-   
-    
-  </script>
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Banner-Generator</title>
+    <style>
+        #banner {
+            display: none;
+        }
+    </style>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+        $(function() {
+            $('button').click(function() {
+
+                $('#info').fadeOut(2000, function() {
+                    
+                    var food = $("input:radio[name='food']:checked").val();
+                   
+                    $('#banner').fadeIn(1000).css('background-image', "url(fastfoodPic.jpg)");
+                    
+
+                });
+
+            });
+
+
+
+
+        });
+    </script>
+
+
 </head>
+
 <body>
 
-<div style="border:solid; border-color:green; display:inline-block">
-Name:<input name="name" id="name" value=""> </input> 
-<br>
+    <div style="border:solid; border-color:green; display:inline-block" id="info">
+        Name:
+        <input name="name" id="name" value=""> </input>
+        <br>
 
-<br>Favorite Food:</br>
-<input type="radio" name="food" id="fast-food">Fast Food (Pizza, Fries, Burgers, Milk shakes, chips, etc) </br>
-<input type="radio" name="food" id="fruits"> Fruits & Vegies (Water melon, apples, brocoli, salad, etc)  </br>
-<input type="radio" name="food" id="meats"> Meats (Ham, Turkey Chicken, Lamb, etc) </br>
+        <br>Favorite Food:</br>
+        <input type="radio" name="food" value="fast-food">Fast Food (Pizza, Fries, Cookies, Milk Shakes, Chips, etc) </br>
+        <br></br>
+        <input type="radio" name="food" value="fruits"> Fruits & Vegies (Water Melon, Apples, Brocoli, Salads, Carrots, etc) </br>
+        <br></br>
+        <input type="radio" name="food" value="meats"> Meats (Ham, Turkey, Chicken, Lamb, Beef, etc) </br>
+
+        <br>Favorite Color:</br>
+
+        <input type="text" name="colors" id="color"> </br>
+        <br> </br>
+        <button type="button">Create Banner</button>
+    </div>
+    <h1> </h1>
+    <div id="banner"> </div>
 
 
-
-Favorite Color:
-<input type="text"  name="colors" id="color"> </input>
-<br>
-<button type="button">Create Banner</button>
-
-</div>
 </body>
+
 </html>
