@@ -10,6 +10,7 @@
             display: none;
            
         }
+        
     </style>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>
@@ -21,14 +22,22 @@
                 var food = $("input:radio[name='food']:checked").val();
                 
                    
-                   $('#banner').attr("src",food).fadeIn(1000);
-                  
-                });
-               var name = $('#name').val();
+                   $('img').attr("src",food)
+                   
+                   $('#banner').fadeIn(1000);
+                    var name = $('#name').val();
                 
-               $('h1').html(name);
+              
                var color = $('#color').val();
                $("h1").css("color",color);
+                  var story = ("My name is " + name + ", and my favorite food is " + food );
+               $('h1').html(story);
+               
+                });
+                
+              
+               
+               
             });
 
 
@@ -64,9 +73,12 @@
     
     
     <div id="banner" >  
+    <h1 style="text-align:center"> </h1> 
     
-    
-  <h1> </h1> 
+    <img> </img>
+  
+ 
+  
     
     </div>
    
