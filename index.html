@@ -14,14 +14,21 @@
     </style>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>
-        $(function() {
-            $('button').click(function() {
+        $(function() { 
+            $('button').click(function() { 
 
-                $('#info').fadeOut(2000, function() {
+ //Makes everyting in that 'div' disappear when the button is clicked//
+    $('#info').fadeOut(2000, function() {
                     
+                //Gets the value that the user selected for Favorite Food//
                 var foodURL = $("input:radio[name='food']:checked").val();
                 
-                if(foodURL == "fastfoodPic.jpg"){
+                /* 
+                Sets a condition so that when the user 
+                selects a certain radio, that value
+                appears when the other 'div #banner' fades in
+                */
+                if(foodURL == "fastfoodPic.jpg"){ 
                     var foodName = "Fast Food";
                 } 
                 else if(foodURL == "vegPic.jpg"){
@@ -31,16 +38,20 @@
                     var foodName = "Meats";   
                 }
                    
+                   /*Selects the img tag and changes the picture 
+                   based on what the user selected for
+                   Favorite Food
+                   */
                    $('img').attr("src",foodURL)
                    
-                   $('#banner').fadeIn(1000);
-                    var name = $('#name').val();
+                   $('#banner').fadeIn(1000);//makes the 'div' fade in// 
+                    var name = $('#name').val();//Gets the value that is typed in for name//
                 
               
-               var color = $('#color').val();
-               $("h1").css("color",color);
+               var color = $('#color').val();//Gets the value that is typed in for color//
+               $("h1").css("color",color);//Sets 'h1' to the color that the user typed in//
                   var story = ("My name is " + name + ", and my favorite food is " + foodName );
-               $('h1').html(story);
+               $('h1').html(story);//Places the story in 'h1' & prints it on the page//
                
                 });
                 
